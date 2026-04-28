@@ -8,7 +8,7 @@ import {
   showLoader,
   hideLoader,
   refs,
-} from './js/render-function.js';
+} from './js/render-functions.js';
 
 refs.form = document.querySelector('.form');
 
