@@ -10,8 +10,6 @@ import {
   refs,
 } from './js/render-functions.js';
 
-refs.form = document.querySelector('.form');
-
 refs.form.addEventListener('submit', event => {
   event.preventDefault();
 
@@ -29,9 +27,7 @@ refs.form.addEventListener('submit', event => {
   showLoader();
 
   getImagesByQuery(query)
-    .then(response => {
-      const data = response.data;
-
+    .then(data => {
       if (data.hits.length === 0) {
         iziToast.error({
           message:
@@ -45,7 +41,10 @@ refs.form.addEventListener('submit', event => {
     })
     .catch(error => {
       console.error(error);
-      iziToast.error({ message: 'Error fetching images!' });
+      iziToast.error({
+        message: 'Error fetching images!',
+        position: 'topRight',
+      });
     })
     .finally(() => {
       hideLoader();

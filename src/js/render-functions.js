@@ -4,6 +4,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 export const refs = {
   gallery: document.querySelector('.gallery'),
   loader: document.querySelector('.loader'),
+  form: document.querySelector('.form'),
 };
 
 const lightbox = new SimpleLightbox('.gallery a', {
